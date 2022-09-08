@@ -1,0 +1,16 @@
+<Project>
+  
+  <!--Add analyzers-->
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+</Project>

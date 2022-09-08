@@ -1,0 +1,37 @@
+<Project>
+  
+  <!--Macros attributes-->
+  <PropertyGroup>
+    <CompanyName>AErmilov</CompanyName>
+    <CurrentDate>$([System.DateTime]::Now.ToString(yyyy.MM.dd))</CurrentDate>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+    <CommonPrefix>AErmilov.NumbersIntoWords</CommonPrefix>
+  </PropertyGroup>
+  
+  <!--Assembly attributes-->
+  <PropertyGroup>
+    <Copyright>Copyright $(CurrentYear) © $(CompanyName). All rights reserved</Copyright>
+    <Authors>$(CompanyName)</Authors>
+    <Company>$(CompanyName)</Company>
+    <AssemblyName>$(CommonPrefix).$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>$(CommonPrefix).$(MSBuildProjectName)</RootNamespace>
+  </PropertyGroup>
+  
+  <!--Related arfitacts-->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>default</LangVersion>
+    <EmbedAllSources>true</EmbedAllSources>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  
+  <!--Syntax and analysis-->
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  
+</Project>

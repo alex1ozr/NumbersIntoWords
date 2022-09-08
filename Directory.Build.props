@@ -1,0 +1,16 @@
+<Project>
+  
+  <!--Solution structure-->
+  <PropertyGroup>
+    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    <TestsDir>$(SolutionDir)tests/</TestsDir>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  
+  <Import Project="$(SolutionDir)Common.props" />
+
+  <PropertyGroup Condition="'$(IsTestProject)' == ''">
+    <IsTestProject>$(MSBuildProjectName.Contains(`Tests`))</IsTestProject>
+  </PropertyGroup>
+  
+</Project>

@@ -1,0 +1,6 @@
+<Project>
+  <!--msbuild properties import for every csproj-->
+  <Import Project="$(SolutionDir)Common.targets" />
+  <Import Project="$(SolutionDir)Testing.targets" /> 
+  <Import Project="$(SolutionDir)PackageVersions.targets" />
+</Project>

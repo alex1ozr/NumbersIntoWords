@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfClient"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Numbers converter" Height="206" Width="315"
+        Loaded="Window_Loaded">
+    <Grid>
+        <TextBox x:Name="NumberTextBox" HorizontalAlignment="Left" Margin="28,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Height="17" Grid.ColumnSpan="2" Grid.Column="1" KeyDown="NumberTextBox_KeyDown"/>
+        <Button x:Name="ConvertNumber" Content="Into words" HorizontalAlignment="Left" Margin="157,41,0,0" VerticalAlignment="Top" Width="65" Height="20" Click="ConvertNumber_Click"/>
+        <TextBox x:Name="WordsTextBox" HorizontalAlignment="Left" Margin="28,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Height="57" IsReadOnly="True" IsEnabled="False" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <Label Content="Enter the number:" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="26" Width="105"/>
+        <Label Content="Result:" HorizontalAlignment="Left" Margin="28,58,0,0" VerticalAlignment="Top" Height="26" Width="105"/>
+    </Grid>
+</Window>
