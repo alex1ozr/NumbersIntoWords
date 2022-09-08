@@ -11,10 +11,14 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
     public string NumberIntoWords(decimal num)
     {
         if (num < MinDollarsValue 
-            || num > MaxDollarsValue 
-            || num.HasMoreThan2DecimalPlaces())
+            || num > MaxDollarsValue)
         {
             throw new OutOfRangeNumberException();
+        }
+
+        if (num.HasMoreThan2DecimalPlaces())
+        {
+            throw new TooManyDecimalPlacesException();
         }
 
         // TODO Put algorithm here
