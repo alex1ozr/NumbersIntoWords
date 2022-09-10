@@ -7,12 +7,7 @@ using Xunit;
 namespace AErmilov.NumbersIntoWords.UnitTests.Services;
 public sealed class NumbersIntoWordsServiceTests
 {
-    private readonly INumbersIntoWordsService sut;
-
-	public NumbersIntoWordsServiceTests()
-	{
-        sut = new NumbersIntoWordsService();
-    }
+    private readonly INumbersIntoWordsService sut = new NumbersIntoWordsService();
 
     [Theory(DisplayName = "Execute NumberIntoWords. Positive test.")]
     [MemberData(nameof(PositiveTestData))]
@@ -29,7 +24,7 @@ public sealed class NumbersIntoWordsServiceTests
     public void NumberIntoWords_WrongNumber_ShouldThrow(decimal number)
     {
         Action a = () => sut.NumberIntoWords(number);
-        var exception = a.Should().Throw<OutOfRangeNumberException>();
+        a.Should().Throw<OutOfRangeNumberException>();
     }
 
     public static IEnumerable<object[]> PositiveTestData()

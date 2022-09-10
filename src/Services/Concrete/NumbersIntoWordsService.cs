@@ -7,18 +7,18 @@ namespace AErmilov.NumbersIntoWords.Services.Concrete;
 
 internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
 {
-    private static readonly string[] underTwentyWords = new[] {
+    private static readonly string[] underTwentyWords = {
         "zero", "one", "two", "three", "four",
         "five", "six", "seven", "eight", "nine",
         "ten", "eleven", "twelve", "fourteen", "fifteen",
         "sixteen", "seventeen", "eighteen", "nineteen"};
 
-    private static readonly string[] tensWords = new[] {
+    private static readonly string[] tensWords = {
         string.Empty, string.Empty,
         "twenty", "thirty", "forty", "fifty",
         "sixty",  "seventy", "eighty","ninety" };
 
-    private static readonly string[] scaleWords = new[] { string.Empty, "thousand", "million" };
+    private static readonly string[] scaleWords = { string.Empty, "thousand", "million" };
 
     private const string Hundred = "hundred";
     private const string SingleDollar = "dollar";
@@ -87,7 +87,7 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
         }
     }
 
-    private void ValidateNumber(decimal num)
+    private static void ValidateNumber(decimal num)
     {
         const int MinDollarsValue = 0;
         const decimal MaxDollarsValue = 999_999_999.99M;

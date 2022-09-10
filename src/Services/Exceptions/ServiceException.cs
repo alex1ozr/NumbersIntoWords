@@ -5,10 +5,8 @@
     /// </summary>
     public abstract class ServiceException : Exception
     {
-        /// <inheritdoc />
         public virtual string ErrorCode => string.Empty;
 
-        /// <inheritdoc />
         public virtual string ShortDescription => string.Empty;
 
         /// <inheritdoc />

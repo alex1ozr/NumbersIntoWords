@@ -47,8 +47,8 @@ internal sealed class DefaultExceptionFilter : IExceptionFilter
 
         var statusCode = serviceException switch
         {
-            OutOfRangeNumberException _ => StatusCodes.Status400BadRequest,
-            MoreThanTwoDecimalPlacesException _ => StatusCodes.Status400BadRequest,
+            OutOfRangeNumberException => StatusCodes.Status400BadRequest,
+            MoreThanTwoDecimalPlacesException => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status422UnprocessableEntity
         };
 
@@ -56,7 +56,7 @@ internal sealed class DefaultExceptionFilter : IExceptionFilter
         LogProblem(problemDetails, isError: false);
     }
 
-    private void SetStatusAndResponse(ExceptionContext context, ProblemDetails problemDetails, int? overridenStatusCode = null)
+    private static void SetStatusAndResponse(ExceptionContext context, ProblemDetails problemDetails, int? overridenStatusCode = null)
     {
         problemDetails.Status = overridenStatusCode ?? problemDetails.Status;
 
@@ -72,7 +72,7 @@ internal sealed class DefaultExceptionFilter : IExceptionFilter
 
     private void LogProblem(ProblemDetails problemDetails, bool isError)
     {
-        var message = "An error occurred while processing your request. Uri: {RequestUri}. Message: {ErrorMessage}. {Model}";
+        const string message = "An error occurred while processing your request. Uri: {RequestUri}. Message: {ErrorMessage}. {Model}";
 
         if (isError)
         {

@@ -7,9 +7,9 @@ namespace AErmilov.NumbersIntoWords.Api.Client.Options;
 /// </summary>
 public sealed class NumbersIntoWordsClientOptions
 {
-    public static string OptionsKey = "NumbersIntoWords";
+    public static readonly string OptionsKey = "NumbersIntoWords";
 
-    private static string UrlUnsetError = $"Configuration value '{OptionsKey}.{nameof(ServerUrl)}' is not set";
+    private static readonly string UrlUnsetError = $"Configuration value '{OptionsKey}.{nameof(ServerUrl)}' is not set";
 
     /// <summary>
     /// NumbersIntoWords.Api uri
