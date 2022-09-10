@@ -7,9 +7,9 @@
 
 ## Projects to run
 ### Api
-Starts the Http server.
+Starts the HTTP server.
 ### WpfClient
-Starts the WPF client to interact with api above.
+Starts the WPF client to interact with the api above.
 
 ## Http client generation
 ```shell
@@ -30,6 +30,6 @@ src\Api.Client\Generator\GenerateClient.ps1
 
 ## Tests
 ```shell
-# execute all tests
+# Execute all tests
 dotnet test
 ```

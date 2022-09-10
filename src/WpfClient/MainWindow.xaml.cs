@@ -23,6 +23,7 @@ public sealed partial class MainWindow : Window
         NumberTextBox.Focus();
     }
 
+    // still no async Task in WPF??? o_0 OMG
     private async void ConvertNumber_Click(object sender, RoutedEventArgs e)
     {
         await ConvertNumberIntoWords();
@@ -48,7 +49,7 @@ public sealed partial class MainWindow : Window
 
         if (!TryParseWithCommaSeparator(NumberTextBox.Text, out var number))
         {
-            MessageBox.Show("Please enter decimal value", "Wrong value", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show("Please enter a decimal value", "Wrong value", MessageBoxButton.OK, MessageBoxImage.Error);
             FocusAndSelectInput();
             return;
         }
@@ -79,5 +80,4 @@ public sealed partial class MainWindow : Window
                     NumberDecimalSeparator = ",",
                     NumberGroupSeparator = ""
                 }, out number);
-
 }

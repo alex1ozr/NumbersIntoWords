@@ -11,5 +11,6 @@ public interface INumbersIntoWordsService
     /// Convert into words
     /// </summary>
     /// <exception cref="OutOfRangeNumberException">The number is out of range</exception>
+    /// <exception cref="MoreThanTwoDecimalPlacesException">The number contains more than 2 decimal places</exception>
     string NumberIntoWords(decimal num);
 }

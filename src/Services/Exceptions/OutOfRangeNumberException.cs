@@ -16,5 +16,5 @@ public sealed class OutOfRangeNumberException : ServiceException
     public override string ErrorCode => "wrong_number";
 
     /// <inheritdoc />
-    public override string ShortDescription => "Entered number is out of range";
+    public override string ShortDescription => "The number is out of range";
 }

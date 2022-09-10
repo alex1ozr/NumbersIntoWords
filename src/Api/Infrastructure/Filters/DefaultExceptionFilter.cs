@@ -48,7 +48,7 @@ internal sealed class DefaultExceptionFilter : IExceptionFilter
         var statusCode = serviceException switch
         {
             OutOfRangeNumberException _ => StatusCodes.Status400BadRequest,
-            TooManyDecimalPlacesException _ => StatusCodes.Status400BadRequest,
+            MoreThanTwoDecimalPlacesException _ => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status422UnprocessableEntity
         };
 

@@ -3,10 +3,10 @@
 /// <summary>
 /// The number contains more than 2 decimal places
 /// </summary>
-public sealed class TooManyDecimalPlacesException : ServiceException
+public sealed class MoreThanTwoDecimalPlacesException : ServiceException
 {
     /// <inheritdoc />
-	public TooManyDecimalPlacesException()
+	public MoreThanTwoDecimalPlacesException()
 		: base("The number should contain not more than 2 decimal places")
 	{
 
@@ -16,5 +16,5 @@ public sealed class TooManyDecimalPlacesException : ServiceException
     public override string ErrorCode => "too_many_decimal_places";
 
     /// <inheritdoc />
-    public override string ShortDescription => "Entered number contains more than 2 decimal places";
+    public override string ShortDescription => "The number contains more than 2 decimal places";
 }
