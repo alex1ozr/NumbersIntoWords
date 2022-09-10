@@ -13,7 +13,7 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
         "ten", "eleven", "twelve", "fourteen", "fifteen",
         "sixteen", "seventeen", "eighteen", "nineteen"};
 
-    private static readonly string[] tensMultipleWords = new[] {
+    private static readonly string[] tensWords = new[] {
         string.Empty, string.Empty,
         "twenty", "thirty", "forty", "fifty",
         "sixty",  "seventy", "eighty","ninety" };
@@ -22,9 +22,9 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
 
     private const string Hundred = "hundred";
     private const string SingleDollar = "dollar";
-    private const string MultipleDollars = "dollars";
+    private const string PluralDollars = "dollars";
     private const string SingleCent = "cent";
-    private const string MultipleCents = "cents";
+    private const string PluralCents = "cents";
 
     public string NumberIntoWords(decimal num)
     {
@@ -35,7 +35,7 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
         var intPart = (long)num;
         result.Append(NumberIntoWordsInternal(intPart))
             .Append(' ')
-            .Append(intPart == 1 ? SingleDollar : MultipleDollars);
+            .Append(intPart == 1 ? SingleDollar : PluralDollars);
 
         var decimalPart = (long)(num * 100) % 100;
         if (decimalPart > 0)
@@ -43,7 +43,7 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
             result.Append(" and ")
                 .Append(NumberIntoWordsInternal(decimalPart))
                 .Append(' ')
-                .Append(decimalPart == 1 ? SingleCent : MultipleCents);
+                .Append(decimalPart == 1 ? SingleCent : PluralCents);
         }
 
         return result.ToString();
@@ -61,8 +61,8 @@ internal sealed class NumbersIntoWordsService : INumbersIntoWordsService
             var tenRemainder = number % 10;
 
             return tenRemainder > 0
-                ? $"{tensMultipleWords[tens]}-{NumberIntoWordsInternal(tenRemainder)}"
-                : $"{tensMultipleWords[tens]}";
+                ? $"{tensWords[tens]}-{NumberIntoWordsInternal(tenRemainder)}"
+                : $"{tensWords[tens]}";
         }
         else if (number < 1000)
         {
